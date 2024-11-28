@@ -18,84 +18,83 @@ public class Project
     @GeneratedValue
     private String cdProject;
 
-    private String projectTitle;
-    private String projectSubs;
+    private String title;
+    private String desc;
     private statusEnum status;
-    private String cdTeam;
-    private String cdCourse;
-    private String cdProblem;
-    private String cdObjective;
-    private String cdActivity;
+
+    private Team team;
+    private Problem problem;
+    private Objective objective;
+    private Activity activity;
+    private Cause cause;
+    private Course course;
+
+    public Project() {
+        this.cdProject = UUID.randomUUID().toString();
+    }
 
     public String getCdProject() {
         return cdProject;
     }
-
     public void setCdProject(String cdProject) {
         this.cdProject = cdProject;
     }
-
-    public String getProjectTitle() {
-        return projectTitle;
+    public String getTitle() {
+        return title;
     }
-
-    public void setProjectTitle(String projectTitle) {
-        this.projectTitle = projectTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
-
-    public String getProjectSubs() {
-        return projectSubs;
+    public String getDesc() {
+        return desc;
     }
-
-    public void setProjectSubs(String projectSubs) {
-        this.projectSubs = projectSubs;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
-
     public statusEnum getStatus() {
         return status;
     }
-
     public void setStatus(statusEnum status) {
         this.status = status;
     }
-
-    public String getCdTeam() {
-        return cdTeam;
+    public Team getTeam() {
+        return team;
+    }
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+    public Problem getProblem() {
+        return problem;
+    }
+    public void setProblem(Problem problem) {
+        this.problem = problem;
+    }
+    public Objective getObjective() {
+        return objective;
+    }
+    public void setObjective(Objective objective) {
+        this.objective = objective;
+    }
+    public Activity getActivity() {
+        return activity;
+    }
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+    public Cause getCause() {
+        return cause;
+    }
+    public void setCause(Cause cause) {
+        this.cause = cause;
+    }
+    public Course getCourse() {
+        return course;
+    }
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public void setCdTeam(String cdTeam) {
-        this.cdTeam = cdTeam;
-    }
+    
 
-    public String getCdCourse() {
-        return cdCourse;
-    }
 
-    public void setCdCourse(String cdCourse) {
-        this.cdCourse = cdCourse;
-    }
-
-    public String getCdProblem() {
-        return cdProblem;
-    }
-
-    public void setCdProblem(String cdProblem) {
-        this.cdProblem = cdProblem;
-    }
-
-    public String getCdObjective() {
-        return cdObjective;
-    }
-
-    public void setCdObjective(String cdObjective) {
-        this.cdObjective = cdObjective;
-    }
-
-    public String getCdActivity() {
-        return cdActivity;
-    }
-
-    public void setCdActivity(String cdActivity) {
-        this.cdActivity = cdActivity;
-    }
 }

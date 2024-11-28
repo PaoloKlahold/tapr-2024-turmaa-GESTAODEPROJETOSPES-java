@@ -14,60 +14,56 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import br.univille.microservgestaoprojetospesapplication.entities.Course;
 import br.univille.microservgestaoprojetospesapplication.entities.Project;
+import br.univille.microservgestaoprojetospesapplication.services.CourseService;
 import br.univille.microservgestaoprojetospesapplication.services.ProjectService;
 
 @RestController
-@RequestMapping("/api/v1/projects")
-public class ProjectAPIController {
+@RequestMapping("/course")
+public class CourseController {
 
     @Autowired
-    private ProjectService projectService;
+    private CourseService courseService;
 
     @GetMapping
-    public ResponseEntity<List<Project>> get() {
-        return new ResponseEntity<>(projectService.getAll(), HttpStatus.OK);
+    public ResponseEntity<List<Course>> get() {
+        return new ResponseEntity<>(courseService.getAll(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Project> post(@RequestBody Project project) {
-        if(project == null) {
+    @PostMapping("/post")
+    public ResponseEntity<Course> post(@RequestBody Course course) {
+        if(course == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        var projectSaved = projectService.save(project);
-        return new ResponseEntity<>(projectSaved, HttpStatus.OK);
+        var courseSaved = courseService.save(course);
+        return new ResponseEntity<>(courseSaved, HttpStatus.OK);
     }
 
-    @PutMapping("/{cdProject}")
-    public ResponseEntity<Project> put(@PathVariable("cdProject") String cdProject, @RequestBody Project project)
+    @PutMapping("/{cdCourse}")
+    public ResponseEntity<Course> put(@PathVariable("cdCourse") String cdCourse, @RequestBody Course course)
     {
-        if(project == null || cdProject == null || cdProject == "") {
+        if(course == null || cdCourse == null || cdCourse == "") {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        project = projectService.update(cdProject, project);
-        if (project == null) {
+        course = courseService.update(cdCourse, course);
+        if (course == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<>(project, HttpStatus.OK);
+        return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
     @DeleteMapping("/{cdProject}")
-    public ResponseEntity<Project> put(@PathVariable("cdProject") String cdProject)
+    public ResponseEntity<Course> put(@PathVariable("cdProject") String cdProject)
     {
         if(cdProject == null || cdProject == "") {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        var project = projectService.delete(cdProject);
-
-        if (project == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
+        var project = courseService.delete(cdProject);
         return new ResponseEntity<>(project, HttpStatus.OK);
     }
 

@@ -53,7 +53,7 @@ public class ProjectServiceImpl implements ProjectService
 
         var oldProject = getProject.get();
 
-        oldProject.setProjectTitle(project.getProjectTitle());
+        oldProject.setTitle(project.getTitle());
         projectRepository.save(oldProject);
         return oldProject;
     }

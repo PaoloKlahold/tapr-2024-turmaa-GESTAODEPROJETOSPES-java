@@ -1,6 +1,5 @@
 package br.univille.microservgestaoprojetospesapplication.entities;
 
-import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 import com.azure.spring.data.cosmos.core.mapping.Container;

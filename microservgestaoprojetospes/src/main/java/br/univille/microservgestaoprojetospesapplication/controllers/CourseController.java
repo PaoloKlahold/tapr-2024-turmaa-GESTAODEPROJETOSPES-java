@@ -18,6 +18,7 @@ import br.univille.microservgestaoprojetospesapplication.entities.Course;
 import br.univille.microservgestaoprojetospesapplication.entities.Project;
 import br.univille.microservgestaoprojetospesapplication.services.CourseService;
 import br.univille.microservgestaoprojetospesapplication.services.ProjectService;
+import br.univille.microservgestaoprojetospesapplication.services.CourseService;
 
 @RestController
 @RequestMapping("/course")

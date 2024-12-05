@@ -8,7 +8,7 @@ import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
 import java.sql.Date;
 
-@Container(containerName = "activity", autoCreateContainer = true)
+@Container(containerName = "activity", autoCreateContainer = true, ru = "400")
 public class Activity
 {
     @Id

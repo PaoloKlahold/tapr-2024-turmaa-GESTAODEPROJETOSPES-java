@@ -1,7 +1,18 @@
 package br.univille.microservgestaoprojetospesapplication.enums;
 
-public class statusEnum {
-    public static final String IN_PROGRESS = "IN_PROGRESS";
-    public static final String FINISHED = "FINISHED";
-    public static final String CANCELED = "CANCELED";
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public enum statusEnum {
+    ATIVO, INATIVO;
+
+    @JsonCreator
+    public static statusEnum fromValue(String value) {
+        return statusEnum.valueOf(value.toUpperCase());
+    }
+
+    @JsonValue
+    public String toValue() {
+        return name();
+    }
 }

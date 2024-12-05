@@ -3,13 +3,18 @@ package br.univille.microservgestaoprojetospesapplication.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import br.univille.microservgestaoprojetospesapplication.entities.Course;
 import br.univille.microservgestaoprojetospesapplication.entities.Project;
 import br.univille.microservgestaoprojetospesapplication.repositories.CourseRepository;
 import br.univille.microservgestaoprojetospesapplication.services.CourseService;
 
+@Service
 class CourseServiceImpl implements CourseService {
 
+    @Autowired
     CourseRepository courseRepository;
 
     @Override

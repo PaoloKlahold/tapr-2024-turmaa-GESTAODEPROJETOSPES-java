@@ -1,11 +1,65 @@
-### Get project
-GET http://localhost:8080/api/v1/projects
-
-### Insert project
+### Criar um novo projeto
 POST http://localhost:8080/api/v1/projects
 Content-Type: application/json
 
 {
-    "nome": "projeto1"
+    "title": "Novo Projeto",
+    "desc": "Descrição do projeto",
+    "status": "ATIVO",
+    "team": {
+        "cdTeam": "12345",
+        "cdProject": "a37afa9d-924c-49b4-90b4-bbca0addb1d8",
+        "cdScholarshipStudent": "56789"
+    },
+    "problem": {
+        "cdActivity": "98765",
+        "activityTitle": "Título da Atividade",
+        "activitySubs": "Subtítulo da Atividade",
+        "cdCause": "54321",
+        "cdProject": "a37afa9d-924c-49b4-90b4-bbca0addb1d8"
+    },
+    "objective": {
+        "cdObjective": "67890",
+        "objectiveTitle": "Título do Objetivo",
+        "objectiveSubs": "Subtítulo do Objetivo",
+        "cdProject": "a37afa9d-924c-49b4-90b4-bbca0addb1d8"
+    },
+    "activity": {
+        "cdActivity": "112233",
+        "activityTitle": "Título da Atividade",
+        "activitySubs": "Subtítulo da Atividade",
+        "dtStart": "2024-12-01",
+        "dtEnd": "2024-12-31"
+    },
+    "cause": {
+        "cdCause": "445566",
+        "causeTitle": "Título da Causa",
+        "causeSubs": "Subtítulo da Causa",
+        "cdProblem": "54321"
+    },
+    "course": {
+        "name": "Nome do Curso",
+        "prof": "Nome do Professor",
+        "status": "ATIVO"
+    }
 }
 
+### Get all projects
+GET http://localhost:8080/api/v1/projects
+Accept: application/json
+
+
+
+
+### Get all courses
+GET http://localhost:8080/course
+Accept: application/json
+
+### Insert a course
+POST http://localhost:8080/course/post
+Content-Type: application/json
+
+{
+    "name": "Matemática",
+    "status": "Ativo"
+}

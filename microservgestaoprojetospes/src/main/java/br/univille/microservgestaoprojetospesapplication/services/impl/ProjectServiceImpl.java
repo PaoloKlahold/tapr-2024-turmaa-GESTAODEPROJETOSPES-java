@@ -37,8 +37,8 @@ public class ProjectServiceImpl implements ProjectService
     }
 
     @Override
-    public Project save(Project project)
-    {
+    public Project save(Project project) {
+        
         return projectRepository.save(project);
     }
 

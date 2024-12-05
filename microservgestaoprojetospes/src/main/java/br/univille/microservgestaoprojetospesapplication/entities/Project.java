@@ -10,7 +10,7 @@ import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-@Container(containerName = "project", autoCreateContainer = true)
+@Container(containerName = "project", autoCreateContainer = true, ru = "400")
 public class Project
 {
     @Id
